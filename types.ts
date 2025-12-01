@@ -11,9 +11,9 @@ export interface Project {
 export interface Experience {
   id: string;
   period: string;
-  role?: string;
-  company?: string;
-  content: string;
+  role: string;
+  company: string;
+  description: string;
 }
 
 export interface SocialLink {
