@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Moon, Sun, ArrowUpRight, Mail, Linkedin, Twitter, Instagram } from 'lucide-react';
+import { Moon, Sun, ArrowUpRight, Mail, Linkedin, Twitter, Instagram, Github } from 'lucide-react';
 import { PROJECTS, EXPERIENCE, SOCIALS, SECTION_SOCIALS, NORTHWORKS_TEXT } from './constants';
 import SectionHeader from './components/SectionHeader';
 import ExternalLink from './components/ExternalLink';
@@ -10,14 +10,25 @@ const App: React.FC = () => {
   // Default to 'show-all' to allow users to see content initially, but can filter by clicking nav
   const [activeSection, setActiveSection] = useState('show-all');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
     window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('resize', checkMobile);
+    };
   }, []);
 
   useEffect(() => {
@@ -63,7 +74,7 @@ const App: React.FC = () => {
       <div 
         className="fixed inset-0 z-[-1] pointer-events-none transition-opacity duration-300"
         style={{
-          background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, ${darkMode ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)'}, transparent 80%)`
+          background: `radial-gradient(600px at ${isMobile ? '0px 0px' : `${mousePosition.x}px ${mousePosition.y}px`}, ${darkMode ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)'}, transparent 80%)`
         }}
       />
 
@@ -99,7 +110,7 @@ const App: React.FC = () => {
               </header>
 
               {/* Nav Links */}
-              <ul className="space-y-6 md:space-y-8 mb-12 md:mb-0">
+              <ul className="space-y-6 md:space-y-8 mb-12 md:mb-0 hidden md:block">
               {navItems.map((item) => (
                 <li key={item.id}>
                   <a 
@@ -275,6 +286,7 @@ const App: React.FC = () => {
                     if (social.label === 'LinkedIn') Icon = Linkedin;
                     if (social.label === 'Twitter') Icon = Twitter;
                     if (social.label === 'Instagram') Icon = Instagram;
+                    if (social.label === 'GitHub') Icon = Github;
                     
                     if (social.label === 'TikTok') {
                        return (
