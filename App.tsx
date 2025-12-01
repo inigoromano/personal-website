@@ -160,7 +160,7 @@ const App: React.FC = () => {
           
           {/* About Section */}
           {isSectionVisible('about') && (
-            <section key={`about-${activeSection}`} id="about" className="flex flex-col md:flex-row gap-6 md:gap-12 animate-fade-in">
+            <section key={`about-${activeSection}`} id="about" className="flex flex-col gap-6 animate-fade-in">
               <SectionHeader title="ABOUT ME" />
               <div className="flex-1 text-base leading-relaxed text-gray-800 dark:text-gray-400">
                 <p>I'm a 22 year old New Zealand-based Software Engineer and developer in the making, driven by the goal of becoming a solopreneur by creating useful, meaningful solutions whether it be websites, web apps, mobile apps, games, or SaaS products. I’m passionate about learning, taking on new challenges, and building things that genuinely help people. I'm a fan of and enjoy using AI to accelerate my learning and streamline workflows, but never as a crutch. Outside of tech, I stay active through baseball, the gym, biking, running, and gaming. I’m always looking for the next project or idea that pushes me to grow and improve.</p>
@@ -170,7 +170,7 @@ const App: React.FC = () => {
 
           {/* Projects Section */}
           {isSectionVisible('projects') && (
-            <section key={`projects-${activeSection}`} id="projects" className="flex flex-col md:flex-row gap-6 md:gap-12 animate-fade-in">
+            <section key={`projects-${activeSection}`} id="projects" className="flex flex-col gap-6 animate-fade-in">
               <SectionHeader title="PROJECTS" />
               <div className="flex-1 space-y-12">
                 {PROJECTS.map((project) => (
@@ -223,7 +223,7 @@ const App: React.FC = () => {
 
           {/* Northworks Section */}
           {isSectionVisible('northworks') && (
-            <section key={`northworks-${activeSection}`} id="northworks" className="flex flex-col md:flex-row gap-6 md:gap-12 animate-fade-in">
+            <section key={`northworks-${activeSection}`} id="northworks" className="flex flex-col gap-6 animate-fade-in">
               <SectionHeader title="NORTHWORKS DIGITAL" />
               <div className="flex-1 space-y-6 text-sm md:text-base leading-relaxed text-gray-600 dark:text-gray-400">
                  {NORTHWORKS_TEXT.split('\n\n').map((para, i) => {
@@ -244,7 +244,7 @@ const App: React.FC = () => {
 
           {/* Experience Section */}
           {isSectionVisible('experience') && (
-            <section key={`experience-${activeSection}`} id="experience" className="flex flex-col md:flex-row gap-6 md:gap-12 animate-fade-in">
+            <section key={`experience-${activeSection}`} id="experience" className="flex flex-col gap-6 animate-fade-in">
               <SectionHeader title="EXPERIENCE" />
               <div className="flex-1 space-y-8">
                 {EXPERIENCE.map((exp) => (
@@ -267,7 +267,7 @@ const App: React.FC = () => {
 
           {/* Socials Section */}
           {isSectionVisible('socials') && (
-            <section key={`socials-${activeSection}`} id="socials" className="flex flex-col md:flex-row gap-6 md:gap-12 animate-fade-in">
+            <section key={`socials-${activeSection}`} id="socials" className="flex flex-col gap-6 animate-fade-in">
               <SectionHeader title="SOCIALS" />
               <div className="flex-1 flex flex-wrap gap-6 items-center">
                  {SECTION_SOCIALS.map((social, index) => {
