@@ -67,26 +67,7 @@ const App: React.FC = () => {
         }}
       />
 
-      {/* Header / Top Navigation */}
-      <header className="flex justify-between items-start mb-20 md:mb-32">
-        <div>
-          <h1 className="text-xl font-bold tracking-tight">inigo romano</h1>
-          <p className="text-gray-600 dark:text-gray-400">software engineering student</p>
-        </div>
-        
-        <button 
-          onClick={toggleTheme}
-          className="group flex items-center p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-all duration-300 focus:outline-none"
-          aria-label="Toggle Dark Mode"
-        >
-          {darkMode ? <Moon size={20} fill="currentColor" /> : <Sun size={20} fill="currentColor" />}
-          <span className="max-w-0 overflow-hidden group-hover:max-w-[100px] transition-all duration-300 ease-in-out">
-            <span className="pl-2 text-sm font-medium whitespace-nowrap block">
-              {darkMode ? 'Dark' : 'Light'}
-            </span>
-          </span>
-        </button>
-      </header>
+
 
       {/* Main Grid Layout */}
       <div className="flex flex-col md:flex-row gap-12 md:gap-4 relative">
@@ -95,8 +76,30 @@ const App: React.FC = () => {
         <nav className="md:w-1/3 md:shrink-0">
           <div className="md:sticky md:top-24 flex flex-col justify-between h-auto md:h-[calc(100vh-12rem)]">
             
-            {/* Nav Links */}
-            <ul className="space-y-6 md:space-y-8 mb-12 md:mb-0">
+            <div>
+              {/* Header / Top Navigation */}
+              <header className="flex justify-between items-start mb-8 md:mb-12">
+                <div>
+                  <h1 className="text-xl font-bold tracking-tight">inigo romano</h1>
+                  <p className="text-gray-600 dark:text-gray-400">software engineering student</p>
+                </div>
+                
+                <button 
+                  onClick={toggleTheme}
+                  className="group flex items-center p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-all duration-300 focus:outline-none"
+                  aria-label="Toggle Dark Mode"
+                >
+                  {darkMode ? <Moon size={20} fill="currentColor" /> : <Sun size={20} fill="currentColor" />}
+                  <span className="max-w-0 overflow-hidden group-hover:max-w-[100px] transition-all duration-300 ease-in-out">
+                    <span className="pl-2 text-sm font-medium whitespace-nowrap block">
+                      {darkMode ? 'Dark' : 'Light'}
+                    </span>
+                  </span>
+                </button>
+              </header>
+
+              {/* Nav Links */}
+              <ul className="space-y-6 md:space-y-8 mb-12 md:mb-0">
               {navItems.map((item) => (
                 <li key={item.id}>
                   <a 
@@ -116,6 +119,7 @@ const App: React.FC = () => {
                 </li>
               ))}
             </ul>
+            </div>
 
             {/* Bottom Contacts (Inverted Hover) */}
             <div className="space-y-0 border-t border-gray-200 dark:border-gray-800 md:border-none pt-6 md:pt-0">

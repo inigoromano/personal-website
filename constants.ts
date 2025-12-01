@@ -4,17 +4,17 @@ export const PROJECTS: Project[] = [
   {
     id: 'coupling',
     title: 'Coupling',
-    description: 'An app dedicated to couples',
+    description: 'An app that brings long-distance couples closer through shared calendars, memories, and daily connection tools.',
     image: 'https://placehold.co/100x100/2a2a2a/FFF',
-    tags: ['Swift', 'iOS', 'Tailwind'],
+    tags: ['React Native + Expo', 'Firebase'],
     highlightTags: ['In Progress', 'Projected Launch: 2026 Q1'],
   },
   {
     id: 'playmate',
     title: 'Playmate',
-    description: 'Fun turn-based minigames in one.',
+    description: 'Multiple fun turn-based minigames accessible in one app.',
     image: 'https://placehold.co/100x100/2a2a2a/FFF',
-    tags: ['iOS', 'Express', 'MongoDB'],
+    tags: ['Unity', 'C#', 'Firebase', 'Photon Fusion'],
     highlightTags: ['In Progress', 'Projected Launch: 2026 Q2'],
   },
   {
@@ -22,23 +22,17 @@ export const PROJECTS: Project[] = [
     title: 'Northworks Digital',
     description: 'A digital agency based in North Island, New Zealand.',
     image: 'https://placehold.co/100x100/2a2a2a/FFF',
-    tags: ['Startup', 'Django', 'PostgreSQL'],
+    tags: ['React', 'Vite'],
+    highlightTags: ['Startup'],
   },
   {
     id: 'trecho',
     title: 'Trecho',
     description: 'Live translate audio to text in real-time.',
     image: 'https://placehold.co/100x100/2a2a2a/FFF',
-    tags: ['React', 'TypeScript', 'GraphQL'],
-    highlightTags: ['In Progress'],
+    tags: ['Flutter', 'Python Fast API'],
+    highlightTags: ['Brainstorming Phase'],
   },
-  {
-    id: 'project-5',
-    title: 'Project 5',
-    description: 'project description',
-    image: 'https://placehold.co/100x100/2a2a2a/FFF',
-    tags: ['tag1', 'tag2', 'tag3'],
-  }
 ];
 
 export const EXPERIENCE: Experience[] = [
@@ -47,21 +41,21 @@ export const EXPERIENCE: Experience[] = [
     period: 'NOV 2025 - PRESENT',
     role: 'Founder and Web Developer',
     company: 'Northworks Digital',
-    description: 'experience description',
+    description: 'Building custom, high-performance websites for small and medium-sized businesses in New Zealand using modern web technologies and best practices.'
   },
   {
     id: 'massey-halls',
     period: 'JAN 2024 - NOV 2025',
     role: 'Residential Assistant',
-    company: 'Massey Halls',
-    description: 'experience description',
+    company: 'Massey University Student Accommodation',
+    description: 'Supported and guided a community of 200+ students, organized events, and ensured a safe and inclusive living environment.'
   },
   {
     id: 'paknsave',
     period: 'SEP 2022 - NOV 2023',
     role: 'Checkout Operator',
     company: 'PAK\'nSAVE',
-    description: 'experience description',
+    description: 'Provided efficient and friendly checkout services, ensuring a positive shopping experience for customers.'
   }
 ];
 
