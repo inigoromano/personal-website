@@ -98,7 +98,7 @@ export const SECTION_SOCIALS: SocialLink[] = [
   },
   {
     label: 'GitHub',
-    url: 'https://github.com/inigomr'
+    url: 'https://github.com/inigoromano'
   },
   {
     label: 'northworks.co.nz',
