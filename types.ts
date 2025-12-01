@@ -5,6 +5,7 @@ export interface Project {
   link?: string;
   image?: string;
   tags?: string[];
+  highlightTags?: string[];
 }
 
 export interface Experience {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Moon, Sun, ArrowUpRight } from 'lucide-react';
-import { PROJECTS, EXPERIENCE, SOCIALS, NORTHWORKS_TEXT } from './constants';
+import { Moon, Sun, ArrowUpRight, Mail, Linkedin, Twitter, Instagram } from 'lucide-react';
+import { PROJECTS, EXPERIENCE, SOCIALS, SECTION_SOCIALS, NORTHWORKS_TEXT } from './constants';
 import SectionHeader from './components/SectionHeader';
 import ExternalLink from './components/ExternalLink';
 
@@ -181,18 +181,24 @@ const App: React.FC = () => {
                       </p>
                       
                       {/* Tech Stack Tags */}
-                      {project.tags && (
-                        <div className="flex flex-wrap gap-2">
-                          {project.tags.map((tag, index) => (
-                            <span 
-                              key={index} 
-                              className="px-3 py-1 text-xs font-medium rounded-full border border-neutral-200 dark:border-neutral-800 text-neutral-500 dark:text-neutral-400 bg-transparent"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      )}
+                      <div className="flex flex-wrap gap-2">
+                        {project.highlightTags && project.highlightTags.map((tag, index) => (
+                          <span 
+                            key={`highlight-${index}`}
+                            className="px-3 py-1 text-xs font-medium rounded-full bg-black text-white dark:bg-white dark:text-black border border-transparent"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                        {project.tags && project.tags.map((tag, index) => (
+                          <span 
+                            key={index} 
+                            className="px-3 py-1 text-xs font-medium rounded-full border border-neutral-200 dark:border-neutral-800 text-neutral-500 dark:text-neutral-400 bg-transparent"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -209,7 +215,7 @@ const App: React.FC = () => {
                    if (para.includes('Visit Website')) {
                      return (
                        <div key={i} className="pt-2">
-                         <ExternalLink href="https://northworks.co.nz" className="text-black dark:text-white no-underline hover:underline transition-all font-medium">
+                         <ExternalLink href="https://northworks.co.nz" className="text-black dark:text-white no-underline hover:underline hover:text-blue-600 hover:dark:text-blue-300 transition-all font-medium">
                            Visit Website
                          </ExternalLink>
                        </div>
@@ -242,16 +248,67 @@ const App: React.FC = () => {
 
           {/* Socials Section */}
           {isSectionVisible('socials') && (
-            <section id="socials" className="flex flex-col md:flex-row gap-6 md:gap-12 animate-fade-in">
+            <section id="socials" className="flex flex-col md:flex-row gap-6 md:gap-12 animate-fade-in-up">
               <SectionHeader title="SOCIALS" />
-              <div className="flex-1 space-y-4">
-                 {SOCIALS.map((social, index) => (
-                    <div key={index}>
-                      <ExternalLink href={social.url} className="text-lg font-medium text-gray-800 dark:text-gray-200">
-                        {social.label}
-                      </ExternalLink>
-                    </div>
-                 ))}
+              <div className="flex-1 flex flex-wrap gap-6 items-center">
+                 {SECTION_SOCIALS.map((social, index) => {
+                    if (social.label === 'northworks.co.nz') {
+                       return (
+                        <div key={index} className="w-full pt-2">
+                           <ExternalLink href={social.url} className="text-lg font-medium text-gray-800 dark:text-gray-200">
+                            {social.label}
+                          </ExternalLink>
+                        </div>
+                      );
+                    }
+
+                    let Icon = null;
+                    if (social.label === 'Email') Icon = Mail;
+                    if (social.label === 'LinkedIn') Icon = Linkedin;
+                    if (social.label === 'Twitter') Icon = Twitter;
+                    if (social.label === 'Instagram') Icon = Instagram;
+                    
+                    if (social.label === 'TikTok') {
+                       return (
+                          <a 
+                            key={index}
+                            href={social.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white transition-all duration-300 hover:scale-110"
+                            aria-label={social.label}
+                          >
+                            <svg 
+                              xmlns="http://www.w3.org/2000/svg" 
+                              width="24" 
+                              height="24" 
+                              viewBox="0 0 24 24" 
+                              fill="none" 
+                              stroke="currentColor" 
+                              strokeWidth="2" 
+                              strokeLinecap="round" 
+                              strokeLinejoin="round"
+                              className="w-7 h-7"
+                            >
+                              <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+                            </svg>
+                          </a>
+                       );
+                    }
+
+                    return (
+                      <a 
+                        key={index}
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white transition-all duration-300 hover:scale-110"
+                        aria-label={social.label}
+                      >
+                        {Icon && <Icon size={28} />}
+                      </a>
+                    );
+                 })}
               </div>
             </section>
           )}
