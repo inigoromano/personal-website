@@ -61,20 +61,16 @@ export const EXPERIENCE: Experience[] = [
 
 export const SOCIALS: SocialLink[] = [
   {
-    label: 'inigo.manuelromano@gmail.com',
+    label: 'Send me an Email',
     url: 'mailto:inigo.manuelromano@gmail.com',
     isEmail: true
   },
   {
-    label: 'Northworks Digital',
+    label: 'Check out Northworks Digital',
     url: 'https://northworks.co.nz'
   },
   {
-    label: '+64 22 033 2166',
-    url: 'tel:+64220332166'
-  },
-  {
-    label: 'LinkedIn',
+    label: 'Let\'s connect on LinkedIn',
     url: 'https://linkedin.com'
   }
 ];
