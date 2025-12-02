@@ -106,7 +106,7 @@ export const SECTION_SOCIALS: SocialLink[] = [
   }
 ];
 
-export const NORTHWORKS_TEXT = `Northworks Digital is a fully coded web design studio focused on building clean, modern, and high-performance websites for New Zealand small and medium-sized businesses.
+export const NORTHWORKS_TEXT = `Northworks Digital is a digital & web design studio focused on building clean, modern, and high-performance websites for New Zealand small and medium-sized businesses.
 
 Many businesses rely on basic WordPress or drag-and-drop builders like Wix and Squarespace, without knowing how much it affects performance, SEO, and customer trust. We don't do that here. Every site is built from scratch for better speed, stronger SEO, security, and a smoother experience overall.
 

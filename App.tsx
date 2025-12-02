@@ -85,7 +85,7 @@ const App: React.FC = () => {
         
         {/* Sidebar / Navigation (Sticky on Desktop) */}
         <nav className="md:w-1/3 md:shrink-0">
-          <div className="md:sticky md:top-24 flex flex-col justify-between h-auto md:h-[calc(100vh-12rem)]">
+          <div className="md:sticky md:top-20 flex flex-col justify-between h-auto md:h-[calc(100vh-12rem)]">
             
             <div>
               {/* Header / Top Navigation */}
