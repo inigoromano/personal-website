@@ -89,7 +89,7 @@ const App: React.FC = () => {
             
             <div>
               {/* Header / Top Navigation */}
-              <header className="flex justify-between items-start mb-8 md:mb-12">
+              <header className="flex flex-col items-start mb-8 md:mb-12">
                 <div>
                   <h1 className="text-xl font-bold tracking-tight">inigo romano</h1>
                   <p className="text-gray-600 dark:text-gray-400">software engineering student</p>
@@ -97,7 +97,7 @@ const App: React.FC = () => {
                 
                 <button 
                   onClick={toggleTheme}
-                  className="group flex items-center p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-all duration-300 focus:outline-none"
+                  className="group flex items-center p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-all duration-300 focus:outline-none mt-4"
                   aria-label="Toggle Dark Mode"
                 >
                   {darkMode ? <Moon size={20} fill="currentColor" /> : <Sun size={20} fill="currentColor" />}
