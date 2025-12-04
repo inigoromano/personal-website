@@ -71,7 +71,7 @@ export const SOCIALS: SocialLink[] = [
   },
   {
     label: 'Let\'s connect on LinkedIn',
-    url: 'https://linkedin.com'
+    url: 'https://www.linkedin.com/in/inigoromano/'
   }
 ];
 
