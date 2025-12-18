@@ -64,7 +64,7 @@ export const EXPERIENCE: Experience[] = [
 export const SOCIALS: SocialLink[] = [
   {
     label: 'Send me an Email',
-    url: 'mailto:inigo.manuelromano@gmail.com',
+    url: 'mailto:hello@inigoromano.dev',
     isEmail: true
   },
   {
@@ -80,7 +80,7 @@ export const SOCIALS: SocialLink[] = [
 export const SECTION_SOCIALS: SocialLink[] = [
   {
     label: 'Email',
-    url: 'mailto:inigo.manuelromano@gmail.com',
+    url: 'mailto:hello@inigoromano.dev',
   },
   {
     label: 'LinkedIn',
