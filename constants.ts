@@ -20,7 +20,7 @@ export const PROJECTS: Project[] = [
   {
     id: 'northworks-digital',
     title: 'Northworks Digital',
-    description: 'A digital agency based in North Island, New Zealand.',
+    description: 'A digital agency based in New Zealand.',
     link: 'https://northworks.co.nz',
     image: '/assets/northworks-logo-light.png',
     imageDark: '/assets/northworks-logo-dark.png',
