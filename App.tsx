@@ -195,7 +195,7 @@ const App: React.FC = () => {
               <SectionHeader title="ABOUT ME" />
               <div className="flex-1 text-base leading-relaxed text-gray-800 dark:text-gray-400">
                 <p>
-                  I'm a 22 year old New Zealand-based Software Engineer and
+                  I'm a 23 year old New Zealand-based Software Engineer and
                   developer in the making, driven by the goal of becoming a
                   solopreneur by creating useful, meaningful solutions whether
                   it be websites, web apps, mobile apps, games, or SaaS

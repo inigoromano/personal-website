@@ -2,12 +2,28 @@ import { Project, Experience, SocialLink } from './types';
 
 export const PROJECTS: Project[] = [
   {
+    id: 'recurr',
+    title: 'Recurr',
+    description: 'A simple subscription management app to track and manage all your subscriptions in one place.',
+    image: 'https://placehold.co/100x100/2a2a2a/FFF',
+    tags: ['Swift', 'Supabase'],
+    highlightTags: ['In Progress', 'Projected Launch: 2026 Q3'],
+  },
+  {
+    id: 'interval',
+    title: 'INTERVAL',
+    description: 'A timer app designed for interval training workouts, allowing users to create custom timers for their exercise routines.',
+    image: 'https://placehold.co/100x100/2a2a2a/FFF',
+    tags: ['Swift', 'Supabase'],
+    highlightTags: ['In Progress', 'Projected Launch: 2026 Q3'],
+  },
+  {
     id: 'coupling',
     title: 'Coupling',
     description: 'An app that brings long-distance couples closer through shared calendars, memories, and daily connection tools.',
     image: 'https://placehold.co/100x100/2a2a2a/FFF',
-    tags: ['React Native + Expo', 'Firebase'],
-    highlightTags: ['In Progress', 'Projected Launch: 2026 Q1'],
+    tags: ['React Native + Expo', 'Supabase'],
+    highlightTags: ['Brainstorming Phase', 'Projected Launch: 2026 Q3'],
   },
   {
     id: 'playmate',
@@ -15,7 +31,7 @@ export const PROJECTS: Project[] = [
     description: 'Multiple fun turn-based minigames accessible in one app.',
     image: 'https://placehold.co/100x100/2a2a2a/FFF',
     tags: ['Unity', 'C#', 'Firebase', 'Photon Fusion'],
-    highlightTags: ['In Progress', 'Projected Launch: 2026 Q2'],
+    highlightTags: ['Brainstorming Phase', 'Projected Launch: 2026 Q4'],
   },
   {
     id: 'northworks-digital',
@@ -25,7 +41,7 @@ export const PROJECTS: Project[] = [
     image: '/assets/northworks-logo-light.webp',
     imageDark: '/assets/northworks-logo-dark.webp',
     tags: ['React', 'Vite'],
-    highlightTags: ['Startup'],
+    highlightTags: ['Side Hustle'],
   },
   {
     id: 'trecho',
@@ -112,6 +128,6 @@ export const NORTHWORKS_TEXT = `Northworks Digital is a digital & web design stu
 
 Many businesses rely on basic WordPress or drag-and-drop builders like Wix and Squarespace, without knowing how much it affects performance, SEO, and customer trust. We don't do that here. Every site is built from scratch for better speed, stronger SEO, security, and a smoother experience overall.
 
-Through this startup venture, I get to combine my interest in design, digital presence, and user experience while also learning how to run a business and grow as a solopreneur.
+Through this small business, I get to combine my interest in design, digital presence, and user experience while also learning how to run a business and grow as a solopreneur.
 
 Visit Website`;
