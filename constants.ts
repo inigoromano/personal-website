@@ -2,9 +2,18 @@ import { Project, Experience, SocialLink } from './types';
 
 export const PROJECTS: Project[] = [
   {
+    id: 'acadex',
+    title: 'Acadex',
+    description: 'A peer-to-peer book exchange platform for students to buy, sell, and trade textbooks and study materials within their university community.',
+    image: '/assets/acadex-logo-light.webp',
+    imageDark: '/assets/acadex-logo-dark.webp',
+    tags: ['Next.js', 'Supabase'],
+    highlightTags: ['In Progress', 'Academic Project'],
+  },
+  {
     id: 'recurr',
     title: 'Recurr',
-    description: 'A simple subscription management app to track and manage all your subscriptions in one place.',
+    description: 'A simple subscription management app to track and manage all your recurring expenses in one place.',
     image: 'https://placehold.co/100x100/2a2a2a/FFF',
     tags: ['Swift', 'Supabase'],
     highlightTags: ['In Progress', 'Projected Launch: 2026 Q3'],
@@ -34,16 +43,6 @@ export const PROJECTS: Project[] = [
     highlightTags: ['Brainstorming Phase', 'Projected Launch: 2026 Q4'],
   },
   {
-    id: 'northworks-digital',
-    title: 'Northworks Digital',
-    description: 'A digital agency based in New Zealand.',
-    link: 'https://northworks.co.nz',
-    image: '/assets/northworks-logo-light.webp',
-    imageDark: '/assets/northworks-logo-dark.webp',
-    tags: ['React', 'Vite'],
-    highlightTags: ['Side Hustle'],
-  },
-  {
     id: 'trecho',
     title: 'Trecho',
     description: 'Live translate audio to text in real-time.',
@@ -55,11 +54,11 @@ export const PROJECTS: Project[] = [
 
 export const EXPERIENCE: Experience[] = [
   {
-    id: 'northworks-digital',
-    period: 'NOV 2025 - PRESENT',
-    role: 'Founder and Web Developer',
-    company: 'Northworks Digital',
-    description: 'Building custom, high-performance websites for small and medium-sized businesses in New Zealand using modern web technologies and best practices.'
+    id: 'massey-university',
+    period: 'MAR 2026 - PRESENT',
+    role: 'Academic Support Assistant',
+    company: 'Massey University',
+    description: 'Provide academic support to students, mark assignments, and assist with course administration in the CSIT department.'
   },
   {
     id: 'massey-halls',
@@ -82,10 +81,6 @@ export const SOCIALS: SocialLink[] = [
     label: 'Send me an Email',
     url: 'mailto:hello@inigoromano.dev',
     isEmail: true
-  },
-  {
-    label: 'Check out Northworks Digital',
-    url: 'https://northworks.co.nz'
   },
   {
     label: 'Let\'s connect on LinkedIn',
@@ -118,16 +113,4 @@ export const SECTION_SOCIALS: SocialLink[] = [
     label: 'GitHub',
     url: 'https://github.com/inigoromano'
   },
-  {
-    label: 'northworks.co.nz',
-    url: 'https://northworks.co.nz'
-  }
 ];
-
-export const NORTHWORKS_TEXT = `Northworks Digital is a digital & web design studio focused on building clean, modern, and high-performance websites for New Zealand small and medium-sized businesses.
-
-Many businesses rely on basic WordPress or drag-and-drop builders like Wix and Squarespace, without knowing how much it affects performance, SEO, and customer trust. We don't do that here. Every site is built from scratch for better speed, stronger SEO, security, and a smoother experience overall.
-
-Through this small business, I get to combine my interest in design, digital presence, and user experience while also learning how to run a business and grow as a solopreneur.
-
-Visit Website`;

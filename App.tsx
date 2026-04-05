@@ -14,7 +14,6 @@ import {
   EXPERIENCE,
   SOCIALS,
   SECTION_SOCIALS,
-  NORTHWORKS_TEXT,
 } from "./constants";
 import SectionHeader from "./components/SectionHeader";
 import ExternalLink from "./components/ExternalLink";
@@ -69,7 +68,6 @@ const App: React.FC = () => {
   const navItems = [
     { id: "about", label: "about" },
     { id: "projects", label: "projects" },
-    { id: "northworks", label: "northworks digital" },
     { id: "experience", label: "experience" },
     { id: "socials", label: "socials" },
     { id: "show-all", label: "show all" },
@@ -207,19 +205,6 @@ const App: React.FC = () => {
                   gaming. I’m always looking for the next project or idea that
                   pushes me to grow and improve.
                 </p>
-                <br />
-                <p>
-                  I'm currently running{" "}
-                  <ExternalLink
-                    href="https://northworks.co.nz"
-                    className="text-black dark:text-white no-underline hover:underline hover:text-blue-600 hover:dark:text-blue-300 transition-all font-medium"
-                  >
-                    Northworks Digital
-                  </ExternalLink>
-                  , a digital agency focused on building clean, modern, and
-                  high-performance websites for small and medium-sized
-                  businesses in New Zealand.
-                </p>
               </div>
             </section>
           )}
@@ -310,34 +295,6 @@ const App: React.FC = () => {
             </section>
           )}
 
-          {/* Northworks Section */}
-          {isSectionVisible("northworks") && (
-            <section
-              key={`northworks-${activeSection}`}
-              id="northworks"
-              className="flex flex-col gap-6 animate-fade-in"
-            >
-              <SectionHeader title="NORTHWORKS DIGITAL" />
-              <div className="flex-1 space-y-6 text-sm md:text-base leading-relaxed text-gray-600 dark:text-gray-400">
-                {NORTHWORKS_TEXT.split("\n\n").map((para, i) => {
-                  if (para.includes("Visit Website")) {
-                    return (
-                      <div key={i} className="pt-2">
-                        <ExternalLink
-                          href="https://northworks.co.nz"
-                          className="text-black dark:text-white no-underline hover:underline hover:text-blue-600 hover:dark:text-blue-300 transition-all font-medium"
-                        >
-                          Visit Website
-                        </ExternalLink>
-                      </div>
-                    );
-                  }
-                  return <p key={i}>{para}</p>;
-                })}
-              </div>
-            </section>
-          )}
-
           {/* Experience Section */}
           {isSectionVisible("experience") && (
             <section
@@ -382,18 +339,6 @@ const App: React.FC = () => {
               <SectionHeader title="SOCIALS" />
               <div className="flex-1 flex flex-wrap gap-6 items-center">
                 {SECTION_SOCIALS.map((social, index) => {
-                  if (social.label === "northworks.co.nz") {
-                    return (
-                      <div key={index} className="w-full pt-2">
-                        <ExternalLink
-                          href={social.url}
-                          className="text-lg font-medium text-gray-800 dark:text-gray-200 hover:text-blue-600 hover:dark:text-blue-300 transition-all flex items-center gap-2"
-                        >
-                          {social.label}
-                        </ExternalLink>
-                      </div>
-                    );
-                  }
 
                   let Icon = null;
                   if (social.label === "Email") Icon = Mail;
