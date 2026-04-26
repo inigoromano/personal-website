@@ -87,10 +87,6 @@ export const SOCIALS: SocialLink[] = [
   {
     label: 'Let\'s connect on LinkedIn',
     url: 'https://www.linkedin.com/in/inigoromano/'
-  },
-  {
-    label: 'View my CV',
-    url: '/assets/Inigo_Romano_CV.pdf'
   }
 ];
 
