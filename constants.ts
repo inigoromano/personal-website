@@ -14,7 +14,8 @@ export const PROJECTS: Project[] = [
     id: 'recurr',
     title: 'Recurr',
     description: 'A simple subscription management app to track and manage all your recurring expenses in one place.',
-    image: 'https://placehold.co/100x100/2a2a2a/FFF',
+    image: '/assets/recurr-light.webp',
+    imageDark: '/assets/recurr-dark.webp',
     tags: ['Swift', 'Supabase'],
     highlightTags: ['In Progress', 'Projected Launch: 2026 Q3'],
   },
@@ -22,7 +23,8 @@ export const PROJECTS: Project[] = [
     id: 'interval',
     title: 'INTERVAL',
     description: 'A timer app designed for interval training workouts, allowing users to create custom timers for their exercise routines.',
-    image: 'https://placehold.co/100x100/2a2a2a/FFF',
+    image: '/assets/interval-light.webp',
+    imageDark: '/assets/interval-dark.webp',
     tags: ['Swift', 'Supabase'],
     highlightTags: ['In Progress', 'Projected Launch: 2026 Q3'],
   },
@@ -85,6 +87,10 @@ export const SOCIALS: SocialLink[] = [
   {
     label: 'Let\'s connect on LinkedIn',
     url: 'https://www.linkedin.com/in/inigoromano/'
+  },
+  {
+    label: 'View my CV',
+    url: '/assets/Inigo_Romano_CV.pdf'
   }
 ];
 

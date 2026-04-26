@@ -8,6 +8,7 @@ import {
   Twitter,
   Instagram,
   Github,
+  MapPin,
 } from "lucide-react";
 import {
   PROJECTS,
@@ -106,11 +107,20 @@ const App: React.FC = () => {
               {/* Header / Top Navigation */}
               <header className="flex flex-col items-start mb-8 md:mb-12">
                 <div>
+                  <img
+                    src="/assets/portrait.jpg"
+                    alt="Inigo Romano"
+                    className="mb-5 h-28 w-28 rounded-xl object-cover object-top"
+                  />
                   <h1 className="text-xl font-bold tracking-tight">
                     inigo romano
                   </h1>
                   <p className="text-gray-600 dark:text-gray-400">
                     software engineering student
+                  </p>
+                  <p className="mt-2 flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-500">
+                    <MapPin size={14} aria-hidden="true" />
+                    <span>New Zealand</span>
                   </p>
                 </div>
 
