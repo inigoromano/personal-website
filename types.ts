@@ -17,8 +17,21 @@ export interface Experience {
   description: string;
 }
 
+export interface Education {
+  id: string;
+  period: string;
+  qualification: string;
+  institution: string;
+  description: string;
+}
+
 export interface SocialLink {
   label: string;
   url: string;
   isEmail?: boolean;
+}
+
+export interface ToolkitGroup {
+  category: string;
+  items: string[];
 }

@@ -15,15 +15,30 @@ import {
   EXPERIENCE,
   SOCIALS,
   SECTION_SOCIALS,
+  TOOLKIT,
+  EDUCATION,
 } from "./constants";
 import SectionHeader from "./components/SectionHeader";
 import ExternalLink from "./components/ExternalLink";
+
+declare const __LAST_UPDATED_ISO__: string;
+
+const lastUpdated = new Intl.DateTimeFormat("en-US", {
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+}).format(new Date(__LAST_UPDATED_ISO__));
 
 const App: React.FC = () => {
   // Theme state
   const [darkMode, setDarkMode] = useState(true);
   // Default to 'show-all' to allow users to see content initially, but can filter by clicking nav
   const [activeSection, setActiveSection] = useState("show-all");
+  const [hoveredProjectId, setHoveredProjectId] = useState<string | null>(null);
+  const [hoveredToolkitItem, setHoveredToolkitItem] = useState<string | null>(
+    null
+  );
+  const [hoveredSocialLabel, setHoveredSocialLabel] = useState<string | null>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isMobile, setIsMobile] = useState(false);
 
@@ -68,6 +83,8 @@ const App: React.FC = () => {
 
   const navItems = [
     { id: "about", label: "about" },
+    { id: "skills", label: "skills" },
+    { id: "education", label: "education" },
     { id: "projects", label: "projects" },
     { id: "experience", label: "experience" },
     { id: "socials", label: "socials" },
@@ -113,14 +130,17 @@ const App: React.FC = () => {
                     className="mb-5 h-28 w-28 rounded-xl object-cover object-top"
                   />
                   <h1 className="text-xl font-bold tracking-tight">
-                    inigo romano
+                    Inigo Romano
                   </h1>
                   <p className="text-gray-600 dark:text-gray-400">
-                    software engineering student
+                    Software Engineering Student
                   </p>
                   <p className="mt-2 flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-500">
                     <MapPin size={14} aria-hidden="true" />
                     <span>New Zealand</span>
+                  </p>
+                  <p className="mt-1 text-xs text-gray-500 dark:text-gray-500">
+                    Last updated: {lastUpdated}
                   </p>
                 </div>
 
@@ -219,6 +239,92 @@ const App: React.FC = () => {
             </section>
           )}
 
+          {/* Skills Section */}
+          {isSectionVisible("skills") && (
+            <section
+              key={`skills-${activeSection}`}
+              id="skills"
+              className="flex flex-col gap-6 animate-fade-in"
+            >
+              <SectionHeader title="TOOLKIT" />
+              <div className="flex-1 space-y-5">
+                {TOOLKIT.map((group, groupIndex) => (
+                  <div
+                    key={group.category}
+                    className="group/toolkit grid grid-cols-1 sm:grid-cols-[120px_1fr] items-center gap-3 sm:gap-4 rounded-xl p-4 -m-4 transition-all duration-300 hover:bg-gray-200/40 dark:hover:bg-gray-800/30"
+                  >
+                    <h4 className="flex items-center gap-2 text-sm font-semibold text-gray-600 dark:text-gray-300 transition-colors duration-300 group-hover/toolkit:text-black dark:group-hover/toolkit:text-white">
+                      <span
+                        className={`h-2 w-2 rounded-full transition-all duration-300 group-hover/toolkit:scale-125 ${
+                          [
+                            "bg-sky-500",
+                            "bg-emerald-500",
+                            "bg-amber-500",
+                            "bg-violet-500",
+                            "bg-rose-500",
+                            "bg-cyan-500",
+                          ][groupIndex % 6]
+                        }`}
+                        aria-hidden="true"
+                      />
+                      <span>{group.category}</span>
+                    </h4>
+                    <div className="flex flex-wrap items-center gap-2">
+                      {group.items.map((item) => (
+                        <span
+                          key={item}
+                          onMouseEnter={() => setHoveredToolkitItem(item)}
+                          onMouseLeave={() => setHoveredToolkitItem(null)}
+                          className={`cursor-default px-3 py-1 text-xs font-medium rounded-full border border-neutral-200 dark:border-neutral-800 text-neutral-500 dark:text-neutral-400 bg-transparent transition-all duration-300 hover:-translate-y-0.5 hover:scale-105 hover:border-black hover:bg-black hover:text-white hover:shadow-sm dark:hover:border-white dark:hover:bg-white dark:hover:text-black ${
+                            hoveredToolkitItem && hoveredToolkitItem !== item
+                              ? "opacity-45"
+                              : "opacity-100"
+                          }`}
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Education Section */}
+          {isSectionVisible("education") && (
+            <section
+              key={`education-${activeSection}`}
+              id="education"
+              className="flex flex-col gap-6 animate-fade-in"
+            >
+              <SectionHeader title="EDUCATION & CERTIFICATIONS" />
+              <div className="flex-1 space-y-8">
+                {EDUCATION.map((education) => (
+                  <div
+                    key={education.id}
+                    className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-8"
+                  >
+                    <div className="text-sm text-gray-500 dark:text-gray-400 font-medium uppercase tracking-wide">
+                      {education.period}
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-base text-gray-800 dark:text-gray-200">
+                        {education.qualification}
+                      </h4>
+                      <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
+                        {education.institution}
+                      </p>
+                      <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+                        {education.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
           {/* Projects Section */}
           {isSectionVisible("projects") && (
             <section
@@ -231,11 +337,17 @@ const App: React.FC = () => {
                 {PROJECTS.map((project) => (
                   <div
                     key={project.id}
-                    className="group flex flex-col sm:flex-row gap-6"
+                    onMouseEnter={() => setHoveredProjectId(project.id)}
+                    onMouseLeave={() => setHoveredProjectId(null)}
+                    className={`group/project flex flex-col sm:flex-row gap-6 rounded-xl p-4 -m-4 transition-all duration-300 hover:bg-gray-200/50 dark:hover:bg-gray-800/40 ${
+                      hoveredProjectId && hoveredProjectId !== project.id
+                        ? "opacity-45"
+                        : "opacity-100"
+                    }`}
                   >
                     {/* Project Thumbnail */}
                     <div className="shrink-0">
-                      <div className="w-20 h-20 rounded-lg bg-neutral-200 dark:bg-neutral-800 overflow-hidden transition-all duration-300 hover:scale-110 hover:rotate-3">
+                      <div className="w-20 h-20 rounded-lg bg-neutral-200 dark:bg-neutral-800 overflow-hidden">
                         {project.image &&
                           (project.link ? (
                             <a
@@ -251,7 +363,7 @@ const App: React.FC = () => {
                                     : project.image
                                 }
                                 alt={project.title}
-                                className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                                className="w-full h-full object-cover opacity-80 group-hover/project:opacity-100 transition-opacity duration-300"
                               />
                             </a>
                           ) : (
@@ -262,7 +374,7 @@ const App: React.FC = () => {
                                   : project.image
                               }
                               alt={project.title}
-                              className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                              className="w-full h-full object-cover opacity-80 group-hover/project:opacity-100 transition-opacity duration-300"
                             />
                           ))}
                       </div>
@@ -349,7 +461,6 @@ const App: React.FC = () => {
               <SectionHeader title="SOCIALS" />
               <div className="flex-1 flex flex-wrap gap-6 items-center">
                 {SECTION_SOCIALS.map((social, index) => {
-
                   let Icon = null;
                   if (social.label === "Email") Icon = Mail;
                   if (social.label === "LinkedIn") Icon = Linkedin;
@@ -364,7 +475,13 @@ const App: React.FC = () => {
                         href={social.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white transition-all duration-300 hover:scale-110"
+                        onMouseEnter={() => setHoveredSocialLabel(social.label)}
+                        onMouseLeave={() => setHoveredSocialLabel(null)}
+                        className={`text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white transition-all duration-300 hover:scale-110 ${
+                          hoveredSocialLabel && hoveredSocialLabel !== social.label
+                            ? "opacity-45"
+                            : "opacity-100"
+                        }`}
                         aria-label={social.label}
                       >
                         <svg
@@ -391,7 +508,13 @@ const App: React.FC = () => {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white transition-all duration-300 hover:scale-110"
+                      onMouseEnter={() => setHoveredSocialLabel(social.label)}
+                      onMouseLeave={() => setHoveredSocialLabel(null)}
+                      className={`text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white transition-all duration-300 hover:scale-110 ${
+                        hoveredSocialLabel && hoveredSocialLabel !== social.label
+                          ? "opacity-45"
+                          : "opacity-100"
+                      }`}
                       aria-label={social.label}
                     >
                       {Icon && <Icon size={28} />}

@@ -1,4 +1,4 @@
-import { Project, Experience, SocialLink } from './types';
+import { Project, Experience, SocialLink, ToolkitGroup, Education } from './types';
 
 export const PROJECTS: Project[] = [
   {
@@ -44,14 +44,6 @@ export const PROJECTS: Project[] = [
     tags: ['Unity', 'C#', 'Firebase', 'Photon Fusion'],
     highlightTags: ['Brainstorming Phase', 'Projected Launch: 2026 Q4'],
   },
-  {
-    id: 'trecho',
-    title: 'Trecho',
-    description: 'Live translate audio to text in real-time.',
-    image: 'https://placehold.co/100x100/2a2a2a/FFF',
-    tags: ['Flutter', 'Python Fast API'],
-    highlightTags: ['Brainstorming Phase'],
-  },
 ];
 
 export const EXPERIENCE: Experience[] = [
@@ -76,6 +68,50 @@ export const EXPERIENCE: Experience[] = [
     company: 'PAK\'nSAVE',
     description: 'Provided efficient and friendly checkout services, ensuring a positive shopping experience for customers.'
   }
+];
+
+export const TOOLKIT: ToolkitGroup[] = [
+  {
+    category: 'Languages',
+    items: ['TypeScript', 'JavaScript', 'HTML', 'CSS', 'Swift', 'Python', 'C#', 'C++', 'Java'],
+  },
+  {
+    category: 'Frameworks',
+    items: ['React', 'Next.js', 'Expo', 'React Native', 'Flutter'],
+  },
+  {
+    category: 'Databases',
+    items: ['PostgreSQL', 'Supabase', 'Firebase'],
+  },
+  {
+    category: 'Platforms',
+    items: ['iOS', 'Web', 'Vercel', 'GitHub'],
+  },
+  {
+    category: 'Design & Media',
+    items: ['Figma', 'DaVinci Resolve', 'Canva'],
+  },
+  {
+    category: 'Tools',
+    items: ['Git', 'VS Code', 'Notion'],
+  },
+];
+
+export const EDUCATION: Education[] = [
+  {
+    id: 'massey-university-software-engineering',
+    period: '2024 - PRESENT',
+    qualification: 'Bachelor of Information Sciences, Specializing in Software Engineering',
+    institution: 'Massey University',
+    description: 'Studying software development, databases, systems design, and practical engineering workflows while building independent web, mobile, and SaaS projects.',
+  },
+  {
+    id: 'google-ai-professional-certificate',
+    period: '2026',
+    qualification: 'Google AI Professional Certificate',
+    institution: 'Google',
+    description: 'Practical AI training focused on prompting, responsible judgment, AI workflows, data analysis, content creation, and app building through 20+ hands-on activities.',
+  },
 ];
 
 export const SOCIALS: SocialLink[] = [
@@ -109,7 +145,7 @@ export const SECTION_SOCIALS: SocialLink[] = [
   },
   {
     label: 'Twitter',
-    url: 'https://twitter.com/inigocodes'
+    url: 'https://twitter.com/inigoromanoo'
   },
   {
     label: 'GitHub',
