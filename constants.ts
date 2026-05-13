@@ -101,7 +101,7 @@ export const EDUCATION: Education[] = [
   {
     id: 'massey-university-software-engineering',
     period: '2024 - PRESENT',
-    qualification: 'Bachelor of Information Sciences, Specializing in Software Engineering',
+    qualification: 'BInfSc in Software Engineering',
     institution: 'Massey University',
     description: 'Studying software development, databases, systems design, and practical engineering workflows while building independent web, mobile, and SaaS projects.',
   },
